@@ -1,0 +1,47 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "onlineshopmern",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.0",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.0.0-beta.2",
+    "mongoose": "^5.9.10",
+    "nodemon": "^2.0.3",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "react-bootstrap": "^1.0.1",
+    "react-paypal-express-checkout": "^1.0.5",
+    "react-router": "^3.2.6",
+    "react-scripts": "^3.4.3",
+    "styled-components": "^5.1.1",
+    "validator": "^13.0.0"
+  },
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\"  \" npm run client\"",
+    "heroku-prebuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm audit fix --prefix client",
+    "heroku-build": "npm run build --prefix client",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "author": "Oprea Anca",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "http-server": "^0.12.3"
+  }
+}
